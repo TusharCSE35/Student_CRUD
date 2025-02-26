@@ -1,0 +1,29 @@
+<!-- edit.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Student</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <h1>Edit Student</h1>
+  <form id="edit-student-form" onsubmit="updateStudent(event)">
+    <input type="hidden" id="student-id">
+
+    <label for="student-name">Name</label>
+    <input type="text" id="student-name" required>
+
+    <label for="student-email">Email</label>
+    <input type="email" id="student-email" required>
+
+    <label for="student-phone">Phone</label>
+    <input type="text" id="student-phone" required>
+
+    <button type="submit">Update Student</button>
+  </form>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
