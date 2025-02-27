@@ -4,27 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student List</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/stylle.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Student List</h1>
-        <table id="student-list">
-            <thead>
+    <div class="container my-5">
+        <h1 class="text-center mb-4">🎓 Student List</h1>
+
+        <div class="d-flex justify-content-end mb-3">
+            <a href="add.html" class="btn btn-primary">Add New Student</a>
+        </div>
+
+        <table class="table table-bordered table-striped text-center">
+            <thead class="table-dark">
                 <tr>
                     <th>Name</th>
                     <th>Age</th>
-                    <th>Class</th>
+                    <th>Department</th>
                     <th>Actions</th>
                 </tr>
             </thead>
-            <tbody>
-                <!-- Student data will be inserted here via JavaScript -->
+            <tbody id="student-list">
+                <!-- Dynamic Student Rows -->
             </tbody>
         </table>
-        <a href="add.html">Add New Student</a>
+
     </div>
 
-    <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
 </body>
 </html>
