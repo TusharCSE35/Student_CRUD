@@ -1,20 +1,28 @@
 <?php
-require_once '../../config/database.php';
+header('Content-Type: application/json');
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: PUT, GET, POST, DELETE');
+header('Access-Control-Allow-Headers: Content-Type'); 
+
+require_once '../config/database.php';
+require_once '../models/student.php';
 
 $data = json_decode(file_get_contents("php://input"));
 
-$name = $data->name;
-$age = $data->age;
-$class = $data->class;
+if(!empty($data->name) && !empty($data->age) && !empty($data->department)){
+    $database = new Database();
+    $db = $database->connection();
 
-$query = "INSERT INTO students (name, age, class) VALUES (:name, :age, :class)";
-$stmt = $pdo->prepare($query);
-$stmt->bindParam(':name', $name);
-$stmt->bindParam(':age', $age);
-$stmt->bindParam(':class', $class);
+    $student = new Student($db);
+    $student->name = $data->name;
+    $student->age = $data->age;
+    $student->department = $data->department;
 
-if($stmt->execute()){
-    echo json_encode(['message' => 'Student added successfully']);
+    if($student->create()){
+        echo json_encode(['message' => 'Student added successfully']);
+    } else {
+        echo json_encode(['message' => 'Failed to add student']);
+    }
 } else {
     echo json_encode(['message' => 'Failed to add student']);
 }

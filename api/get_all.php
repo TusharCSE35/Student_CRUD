@@ -1,6 +1,8 @@
 <?php
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: PUT, GET, POST, DELETE'); 
+header('Access-Control-Allow-Headers: Content-Type'); 
 
 require_once '../config/database.php';
 require_once '../models/student.php';

@@ -18,11 +18,29 @@ input[type="text"], input[type="number"]{
     border-radius: 4px;
 }
 
-button[type="submit"]{
+button[type="submit"] {
     transition: all 0.3s ease;
 }
 
 button[type="submit"]:hover {
     transform: scale(1.05);
     background-color: #0056b3;
-  }
+}
+
+.form-buttons {
+    display: flex; 
+    align-items: center; 
+    margin-top: 20px;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-secondary {
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #6c757d;
+    transform: scale(1.05);
+}
